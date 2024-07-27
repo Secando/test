@@ -1,0 +1,28 @@
+{% extends 'app.twig' %}
+
+{% block content %}
+    <div id="main">
+        <div id="home_head" style="height: 670px">
+            <div id="product_info" style="width: 1400px;justify-content: flex-start ; margin-left:500px; border: none;
+align-items: flex-start">
+                <div style="display: flex; flex-direction: column; align-items: center"><img src="http://localhost:8000/assets/images/user.webp" width="250px" height="250px" style="object-fit: cover;object-position: 0 0 100 100; border-radius: 120px;margin-top: 40px"><div style="font-size: 130%;">
+                    {{user.name}}</div></div>
+                <div style="display: flex; flex-direction: column; align-items: start; height: 480px; margin-left: 60px;margin-top: 80px">
+                    <div>Электронная почта: {{ user.email }}</div>
+                    <div>Дата регистрации: {{ user.created_at }}</div>
+                    <div style="margin-top: 20px">Сменить пароль</div>
+                    <form action="/profile/changepass" method="post" style="display:flex; flex-direction: column;">
+                        <input id="cng_pass_old" class="change_pass" type="password" name="old_password" placeholder="Введите старый пароль">
+                        <input id="cng_pass_new" class="change_pass" type="password" name="new_password" placeholder="Введите новый пароль">
+                        <button id="find_btn" style="margin-top: 5px; font-size: 90%">Изменить пароль</button>
+                    </form>
+                </div><div style="display: flex; flex-direction: column; align-items: start; height: 480px; margin-left: 60px;margin-top: 80px">
+                    <form  action="/logout" method="post" style="display:flex; flex-direction: column;">
+                        <button id="find_btn" style="margin-top: 5px; font-size: 90%;background-color:darkred;color: white">Выйти</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

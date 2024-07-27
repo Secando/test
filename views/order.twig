@@ -1,0 +1,27 @@
+{% extends 'app.twig' %}
+
+{% block content %}
+    <div id="main">
+        <div id="home_head" style="height: auto; display: flex;flex-direction: column; padding-bottom: 20px">
+            <div style="margin-right: 450px;margin-top: 20px; margin-bottom: 30px">
+                <div style="font-weight: bold">Ваши заказы</div>
+                <div>Полную информацию о заказах ищите на вашей почте</div>
+            </div>
+            {% for order in orders  %}
+            <div style="margin-right: 710px;">Заказ от {{ order.order.createdAt }}</div>
+            <div style="display: flex; flex-direction: column;width: 1000px; box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.26); padding: 5px 30px 30px 30px;border-radius: 5px; font-size: 80%; margin-bottom: 10px">
+                <div>Номер заказа: {{ order.order.orderId }}</div>
+                <div>Статус: {{ order.order.status | order_status }}</div>
+                <div>Сумма заказа: {% set totalPrice = order.product|reduce((carry, item) => carry + item.cost, 0) %}{{ totalPrice }}Р</div>
+                <div>Товары:</div>
+                <div>
+                    {% for product in order.product %}
+
+                    <a href="catalog/{{product.url}}"><img src="http://localhost:8000/assets/images/{{ product.imagePath }}" width="60"></a>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'app.twig' %}
+
+{% block content %}
+    <div id="main" style="margin-top: -200px">
+        <div id="catalog" style="width: 1000px">
+            <div id="catalog_nav" style="border: none; padding: 10px 0px 0px 23px">
+                <div id="filters">
+                    <div style="margin: 8px; font-size: 120%;">
+                        <div>Ваши избранные товары</div>
+                    </div>
+                </div>
+
+            </div>
+            <div id="products" style="margin-top: -20px">
+                {% if favorites %}
+                    {% for favorite in favorites %}
+                <a class="product_link" href="http://localhost:8000/catalog/{{ favorite.url }}" style="text-decoration: none; text-decoration-color: black">
+                    <div class="product">
+                        <div class="product_img_catalog"><img src="http://localhost:8000/assets/images/{{ favorite.imagePath }}" width="150px"></div>
+                        <div class="product_cost_catalog">{{ favorite.cost }}₽</div>
+                        <div class="product_name_catalog">{{ favorite.englishName }}{{ favorite.rusName }}</div>
+                    </div>
+                </a>
+                    {% endfor %}
+                {% else %}
+                <a class="product_link" href="#" style="text-decoration: none; text-decoration-color: black">
+                    <div class="product">
+                        <div class="product_img_catalog"><img src="../assets/img/photo_2024-07-07_14-08-47.jpg" width="150px"></div>
+                        <div class="product_cost_catalog">1488₽</div>
+                        <div class="product_name_catalog">Baki The Grappler ch1</div>
+                    </div>
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
