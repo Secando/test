@@ -25,10 +25,10 @@
                     <button id="find_btn" style="margin-left: 43px;margin-top: 10px; width: 150px">Применить</button>
                 </div>
                 </form>
-                <form action="/catalog/" method="get" style="">
-                    <input hidden="hidden" name="drop" value="drop">
-                    <button id="find_btn" style="margin-left: 43px;margin-top: 10px; width: 150px">Сбросить все фильтры</button>
-                </form>
+
+
+                <a href="/catalog"><button id="find_btn" style="margin-left: 43px;margin-top: 10px; width: 150px">Сбросить все фильтры</button></a>
+
             </div>
         </div>
         <div id="catalog">
@@ -98,21 +98,21 @@
 
             </div>
             <div style="align-self: end; padding:20px;margin-right: 50px; display: flex">
-                <form action="/catalog/" method="get" style="">
-                    <input hidden="hidden" name="page" type="text" value="prev">
-                <button id="find_btn" style="margin: -5px"><</button>
-                </form>
+{#                <form action="/catalog/" method="get" style="">#}
+{#                    <input hidden="hidden" name="page" type="text" value="prev">#}
+{#                <button id="find_btn" style="margin: -5px"><</button>#}
+{#                </form>#}
                 {% for page in pages.all %}
-                <form action="/catalog/" method="get" style="">
+                <form action="/catalog/" method="get" style=" margin-right: 12px">
                     <input hidden="hidden" name="page" type="text" value="{{ page }}">
                     <button id="find_btn" style="margin: -5px">{{ page }}</button>
                 </form>
 
                 {% endfor %}
-                <form action="/catalog/" method="get" style="">
-                    <input hidden="hidden" name="page" type="text" value="next">
-                    <button id="find_btn" style="margin: -5px">></button>
-                </form>
+{#                <form action="/catalog/" method="get" style="">#}
+{#                    <input hidden="hidden" name="page" type="text" value="next">#}
+{#                    <button id="find_btn" style="margin: -5px">></button>#}
+{#                </form>#}
 
             </div>
         </div>

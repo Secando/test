@@ -24,21 +24,23 @@ class FilterMiddleware implements MiddlewareInterface
 
     public function process(Request $request, RequestHandler $handler): Response
     {
+
+
         $request->getQueryParams();
         $referer = $request->getHeader('referer');
         $currentParams =$request->getQueryParams();
-        echo '<pre>';
-        if(key_exists('drop',$request->getQueryParams())){
 
-            return $this->response->createResponse()->withStatus(302)->withHeader('Location', '/catalog/?page=1');
-        }
-        print_r($referer);
 
-        if($referer ) {
+
+
+
+
+        if($referer) {
             $refererQuery = explode('&',str_replace('?&','&',(str_replace('http://localhost:8000/catalog/?','',$referer[0]))));
             if(stripos($refererQuery[0],'http://')===0){
                 return $handler->handle($request);
             }
+
             foreach ($refererQuery as $k=>$v) {
                 $newK = explode('=',$v)[0];
                 $newV = explode('=',$v)[1];
@@ -80,7 +82,6 @@ class FilterMiddleware implements MiddlewareInterface
 
             return $this->response->createResponse()->withStatus(302)->withHeader('Location', '/catalog/'.$newQuery);
         }
-
 
         return $handler->handle($request);
     }

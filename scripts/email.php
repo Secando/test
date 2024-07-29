@@ -2,10 +2,11 @@
 
 use Doctrine\ORM\EntityManager;
 
-require __DIR__.'/../bootstrap.php';
+$container = require __DIR__.'/../bootstrap.php';
 
 
-$em=$container->get(\Doctrine\ORM\EntityManager::class);
+$em = $container->get(\Doctrine\ORM\EntityManager::class);
+
 /**
  * @var  EntityManager $em
  */

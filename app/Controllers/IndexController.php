@@ -17,4 +17,14 @@ class IndexController
 
         return $this->twig->render($response, 'about.twig');
     }
+    public function vacations(RequestInterface $request ,ResponseInterface $response,$args)
+    {
+
+        return $this->twig->render($response, 'vacations.twig');
+    }
+    public function delivery(RequestInterface $request ,ResponseInterface $response,$args)
+    {
+
+        return $this->twig->render($response, 'delivery.twig');
+    }
 }

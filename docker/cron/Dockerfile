@@ -6,4 +6,3 @@ COPY crontab /etc/crontabs/root
 RUN mkdir /var/log/cron
 
 CMD ["crond", "-f"]
-

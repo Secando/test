@@ -35,6 +35,6 @@ class VerificationController
         $this->em->persist($code);
         $this->em->flush();
         $this->auth->login($user);
-        return $response->withStatus(302)->withHeader('Location', '/catalog');
+        return $response->withStatus(302)->withHeader('Location', '/profile');
     }
 }

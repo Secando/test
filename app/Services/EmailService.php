@@ -21,7 +21,7 @@ class EmailService
 
     public function sendVerificationLink($user){
         $verificationCode = hash("sha256",$user->getEmail().rand(0,999999));
-        $verificationLink = $this->config->app_host. '/verificate/'.$verificationCode;
+        $verificationLink = $this->config->app_host. '/verification/'.$verificationCode;
         $userCode = new UserCode();
         $userCode->setCode($verificationCode);
         $userCode->setUserId($user->getId());

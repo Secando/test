@@ -11,10 +11,8 @@ return function (App $app){
         $group->post('/login', [\App\Controllers\UserController::class, 'login']);
         $group->get('/register', [\App\Controllers\UserController::class, 'showRegisterForm']);
         $group->post('/register', [\App\Controllers\UserController::class, 'register']);
-        $group->get('/verificate', [\App\Controllers\VerificationController::class, 'index']);
-        $group->get('/verificate/{code}', [\App\Controllers\VerificationController::class,'verificate']);
-
-
+        $group->get('/verification', [\App\Controllers\VerificationController::class, 'index']);
+        $group->get('/verification/{code}', [\App\Controllers\VerificationController::class,'verificate']);
 
     })->add(AuthMiddleware::class);
     $app->post('/logout', [\App\Controllers\UserController::class,'logout']);
@@ -30,12 +28,12 @@ return function (App $app){
         $group->get('/orders', [\App\Controllers\OrderController::class, 'index']);
     })->add(\App\Middleware\GuestMiddleware::class);
 
-    $app->get('/catalog/[params]', [\App\Controllers\CatalogController::class, 'filter'])->add(
-        \App\Middleware\FilterMiddleware::class
-    );
+    $app->get('/catalog/[params]', [\App\Controllers\CatalogController::class, 'filter'])->add(\App\Middleware\FilterMiddleware::class);
     $app->get('/catalog/{name}', [\App\Controllers\CatalogController::class, 'showProduct']);
     $app->get('/catalog', [\App\Controllers\CatalogController::class, 'index']);
     $app->get('/', [\App\Controllers\IndexController::class, 'about']);
+    $app->get('/vacations', [\App\Controllers\IndexController::class, 'vacations']);
+    $app->get('/delivery', [\App\Controllers\IndexController::class, 'delivery']);
 
     $app->group('/admin',function ($group){
         $group->get('/products/create', [\App\Controllers\Admin\ProductController::class, 'create']);
@@ -49,6 +47,6 @@ return function (App $app){
         $group->get('/orders', [\App\Controllers\Admin\OrderController::class, 'index']);
         $group->post('/orders/update', [\App\Controllers\Admin\OrderController::class, 'update']);
         $group->post('/orders/delete', [\App\Controllers\Admin\OrderController::class, 'delete']);
-    });
+    })->add(\App\Middleware\AdminMiddleware::class);
 
 };
