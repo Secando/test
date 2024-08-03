@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="e0c898b0-bc60-40c3-a2b0-0f744e5b6a03" name="Northbyte">
+        <fileTransfer rootFolder="/var/www" accessType="SFTP" host="46.17.41.38" port="22" sshConfigId="3aa98f25-8d6c-4c4a-ae0a-1ea4a6a32b48" sshConfig="root@46.17.41.38:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

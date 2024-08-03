@@ -10,8 +10,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\SingleCommandApplication;
-$app = require __DIR__. '/bootstrap.php';
-$container = $app->getContainer();
+$container = require __DIR__. '/bootstrap.php';
 $application = new Application();
 
 
