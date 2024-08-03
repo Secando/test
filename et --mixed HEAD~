@@ -1,0 +1,48 @@
+[33mcommit 8eff0c6fe0afa74dc5e5bed2d5dac456d2aa2c4d[m[33m ([m[1;36mHEAD -> [m[1;32mtesting[m[33m, [m[1;31mtest/test[m[33m)[m
+Merge: f73bd11 4af6ba3
+Author: Secando <funewoks@gmail.com>
+Date:   Sat Aug 3 14:27:24 2024 +0300
+
+    aa
+
+[33mcommit f73bd11919f1b3fd7a4be80589c9719bd90fff49[m
+Author: Secando <funewoks@gmail.com>
+Date:   Sat Aug 3 14:25:06 2024 +0300
+
+    testing
+
+[33mcommit 712ca79987d51154d28d65bddf068442f29d17c3[m
+Author: Secando <funewoks@gmail.com>
+Date:   Sat Aug 3 14:23:19 2024 +0300
+
+    testing
+
+[33mcommit 4af6ba31e11b88502a029dfe2225b32e57853f93[m[33m ([m[1;31mtest/master[m[33m, [m[1;32mtest/develop[m[33m)[m
+Author: Secando <funewoks@gmail.com>
+Date:   Sat Aug 3 14:10:25 2024 +0300
+
+    lol
+
+[33mcommit f3192335513d79e8c6066a77c54b77b50b646760[m[33m ([m[1;31mtest/develop[m[33m)[m
+Author: Secando <funewoks@gmail.com>
+Date:   Sat Aug 3 14:08:14 2024 +0300
+
+    ahaha
+
+[33mcommit 92acd41ae9f9f4051a2bb7cff5bb7bc29c0093d0[m
+Author: Secando <funewoks@gmail.com>
+Date:   Sat Aug 3 14:04:38 2024 +0300
+
+    add test for .env.example
+
+[33mcommit 8cad0ab8d9b926cd9f526e3fd5b46abbfe7dc986[m
+Author: Secando <email@example.com>
+Date:   Mon Jul 29 16:34:37 2024 +0300
+
+    Add some html pages
+
+[33mcommit 608fd002a964a927f4a555a6cbac1074de4e3d78[m
+Author: Secando <email@example.com>
+Date:   Sat Jul 27 23:13:00 2024 +0300
+
+    1.0
